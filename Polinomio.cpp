@@ -19,9 +19,8 @@ Polinomio::Polinomio(int gradoPolinomio, float *miPolinomio){
 float Polinomio::evaluar(float equisAEvaluar)
 {
 	float resultado = 0;
-	for (int i = 0; i < this->gradoPolinomio; i++)
-	{
-		resultado += coeficientesPolinomio[(this->gradoPolinomio - i)] * (equisAEvaluar * i);
+	for (int i = 0; i < this->gradoPolinomio+1; i++){
+		resultado += this->coeficientesPolinomio[i] * (pow(equisAEvaluar, i));
 	}
 	return resultado;
 }
